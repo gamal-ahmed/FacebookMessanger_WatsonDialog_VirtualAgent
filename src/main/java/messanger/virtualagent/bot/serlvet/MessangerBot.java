@@ -44,11 +44,12 @@ public class MessangerBot extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+	 
 		String token = req.getParameter("hub.verify_token");
 		if (token != null) {
 			resp.setContentType("text/html");
 
-			if (token.equals("imo")) {
+			if (token.equals("{verified_token}")) {
 				String challenge = req.getParameter("hub.challenge");
 				System.out.println("I am WebHock Verification -------->  ");
 
